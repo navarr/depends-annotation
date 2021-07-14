@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Navarr\Depends\Controller;
 
 use Navarr\Attribute\Dependency;
+use Navarr\Depends\Controller\Cli\WhyBlockCliCommand;
 use Symfony\Component\Console\Application;
 
 #[Dependency('symfony/console', '^5', 'Creates a Symfony Application')]
@@ -19,7 +20,7 @@ class CliApplication
     public static function execute(): int
     {
         $application = new Application('DepAnno', static::VERSION);
-        $application->add(new WhyBlockCommandController());
+        $application->add(new WhyBlockCliCommand());
         return $application->run();
     }
 }

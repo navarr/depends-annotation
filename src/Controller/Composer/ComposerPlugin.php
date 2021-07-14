@@ -14,8 +14,6 @@ use Composer\Plugin\Capability\CommandProvider;
 use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
 use Navarr\Attribute\Dependency;
-use Navarr\Depends\Command\WhyBlockCommand;
-use Symfony\Component\Console\Command\Command;
 
 #[Dependency('composer-plugin-api', '^1|^2', 'Reliant Interfaces')]
 #[Dependency('composer/composer', '^1|^2', 'Existence of IOInterface and Composer class')]
@@ -41,7 +39,7 @@ class ComposerPlugin implements PluginInterface, Capable, CommandProvider
     public function getCommands(): array
     {
         return [
-            new ComposerCommand(),
+            new WhyBlockComposerCommand(),
         ];
     }
 
