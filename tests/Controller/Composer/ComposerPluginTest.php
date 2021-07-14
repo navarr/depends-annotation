@@ -6,7 +6,7 @@
 namespace Navarr\Depends\Test\Controller\Composer;
 
 use Composer\Plugin\Capability\CommandProvider;
-use Navarr\Depends\Controller\Composer\ComposerCommand;
+use Navarr\Depends\Controller\Composer\WhyBlockComposerCommand;
 use Navarr\Depends\Controller\Composer\ComposerPlugin;
 use PHPUnit\Framework\TestCase;
 
@@ -29,6 +29,6 @@ class ComposerPluginTest extends TestCase
         $this->assertIsArray($commands);
         $this->assertCount(1, $commands);
         $command = end($commands);
-        $this->assertInstanceOf(ComposerCommand::class, $command);
+        $this->assertInstanceOf(WhyBlockComposerCommand::class, $command);
     }
 }
